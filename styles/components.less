@@ -54,7 +54,7 @@
 
 // Announcements
 .cmp_announcements {
-    border-top: none;
+    border: none;
 
 	> li {
 		border-bottom: none;
@@ -80,25 +80,5 @@
 		&:before {
 			color: @accent;
 		}
-    }
-
-    @media(min-width: @screen-desktop) {
-
-        h2 + .obj_announcement_summary, // first announcement only
-        .more {
-            padding-top: 80px;
-            padding-bottom: 80px;
-        }
-
-        .more .obj_announcement_summary {
-            padding-top: 0;
-            padding-bottom: 0;
-            margin-bottom: @double;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-
     }
 }
