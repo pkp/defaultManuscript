@@ -26,7 +26,7 @@
 // Breadcrumb navigation
 .cmp_breadcrumbs {
 	padding: @triple 0;
-	font-family: @font-heading;
+	font-family: @font-alt;
 	font-size: @font-sml;
 	color: @text-light;
 	text-transform: uppercase;
@@ -44,4 +44,61 @@
 		padding: 0 0.1em;
 		opacity: 0.3;
 	}
+}
+
+// Pagination (eg - issue archive)
+.cmp_pagination {
+	font-family: @font-alt;
+}
+
+
+// Announcements
+.cmp_announcements {
+    border-top: none;
+
+	> li {
+		border-bottom: none;
+	}
+
+	.obj_announcement_summary h2,
+	.obj_announcement_summary h3,
+    .obj_announcement_summary h4,
+    .date,
+    .read_more {
+        font-family: @font-heading;
+        font-size: @font-sml;
+        font-weight: @bold;
+    }
+
+	.read_more {
+		text-transform: uppercase;
+	}
+
+    .date {
+        font-weight: @normal;
+
+		&:before {
+			color: @accent;
+		}
+    }
+
+    @media(min-width: @screen-desktop) {
+
+        h2 + .obj_announcement_summary, // first announcement only
+        .more {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        .more .obj_announcement_summary {
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-bottom: @double;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+    }
 }
