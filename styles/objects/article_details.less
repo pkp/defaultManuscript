@@ -77,7 +77,7 @@
 
 		.sub_item {
 			padding: 0;
-			margin-bottom: @triple;
+			margin-bottom: 0;
 
 			&:last-child {
 				margin-bottom: 0;
@@ -102,6 +102,7 @@
 			border-radius: @radius;
 		}
 
+		// Create more light-weight headers for subsequent sub-item labels
 		.sub_item:not(:first-child) .label {
 			display: inline-block;
 			padding: 0.5em 0;
@@ -109,17 +110,37 @@
 			border-bottom: 3px solid @accent;
 		}
 
-		.galleys_links > li {
+		.cover_image img {
 			display: block;
-			margin-bottom: 0.5em;
+			border-radius: @radius;
+		}
 
-			&:last-child {
-				margin-bottom: 0;
+		.item.galleys {
+			box-shadow: none;
+
+			.galleys_links {
+				padding: 0;
 			}
+		}
 
-			a {
+		.galleys_links {
+
+			> li {
 				display: block;
+				margin-bottom: 0.5em;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				a {
+					display: block;
+				}
 			}
+		}
+
+		.citation_display {
+			margin-bottom: 0;
 		}
 	}
 }
