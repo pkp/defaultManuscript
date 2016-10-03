@@ -81,3 +81,20 @@
 		}
 	}
 }
+
+// Remove borders when no sidebar is active
+.pkp_structure_main:first-child:last-child {
+
+	.cmp_announcements {
+		border-bottom: none;
+
+		> .more:before,
+		> .obj_announcement_summary:before {
+			display: none;
+		}
+	}
+
+	.additional_content {
+		border-top: none;
+	}
+}
