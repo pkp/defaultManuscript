@@ -1,0 +1,173 @@
+/**
+ * @file plugins/themes/default-manuscript/styles/head.less
+ *
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * @brief Styles for the page header structural elements
+ *
+ */
+.pkp_head_wrapper {
+	position: relative;
+	padding-top: 0;
+}
+
+.pkp_site_name_wrapper,
+.pkp_navigation_primary_row {
+	padding-left: @triple;
+	padding-right: @triple;
+}
+
+.pkp_site_name {
+	padding-top: @base + @half;
+	padding-bottom: @base + @half;
+
+	.is_text {
+		font-size: @font-lead;
+		text-transform: uppercase;
+	}
+
+	@media(min-width: @screen-desktop) {
+		width: 75%;
+		margin-left: 0;
+	}
+}
+
+.pkp_navigation_primary_row {
+	background: @bg;
+}
+
+.pkp_navigation_primary_wrapper {
+	width: auto;
+}
+
+// Use the ID so that we override all styles in the base theme
+#navigationPrimary {
+
+	a {
+		font-family: @font-heading;
+		font-size: @font-sml;
+		color: @text-light;
+		font-weight: @bold;
+		text-transform: uppercase;
+
+		&:hover,
+		&:focus {
+			color: @primary;
+		}
+	}
+
+	> li > a {
+		padding-bottom: 6px;
+		border-bottom-width: 4px;
+
+		&:hover,
+		&:focus {
+			border-color: @primary;
+		}
+	}
+
+	> [aria-haspopup] > a:hover,
+	> [aria-haspopup] > a:focus {
+		border-color: transparent;
+	}
+
+	ul {
+		background: @bg-base;
+
+		a {
+			color: @text-bg-base;
+
+			&:hover,
+			&:focus {
+				border-color: transparent;
+			}
+		}
+	}
+
+	[aria-expanded="true"]:before {
+		border-bottom-color: @bg-base;
+	}
+}
+
+.pkp_head_wrapper .pkp_search {
+
+	.search_controls {
+
+		.search_prompt {
+			padding-bottom: @base;
+			border-bottom: none;
+			font-family: @font-heading;
+			font-size: @font-sml;
+			color: @text-light;
+			font-weight: @bold;
+			text-transform: uppercase;
+
+			&:hover,
+			&:focus {
+				color: @primary;
+			}
+
+			&:before {
+				color: @accent;
+
+				&:hover,
+				&:focus {
+					color: @accent;
+				}
+			}
+		}
+	}
+
+	&.is_open {
+		min-width: 50%;
+
+		input[type="text"] {
+			border-bottom: none;
+			background: @bg-light-shade;
+			border-left: @bg-border;
+		}
+
+		.search_controls {
+
+			.search_prompt {
+				background: @accent;
+				color: @text-bg-base;
+
+				&:hover,
+				&:focus {
+					border-bottom: transparent;
+				}
+
+				&:before {
+					color: @text-bg-base;
+				}
+			}
+		}
+	}
+}
+
+.pkp_navigation_user_wrapper {
+
+	a {
+		font-family: @font-heading;
+		font-size: @font-sml;
+		color: @text-light;
+		font-weight: @bold;
+	}
+
+	@media(min-width: @screen-desktop) {
+		top: 25px;
+		right: 0;
+		left: auto;
+		width: 25%;
+		padding-right: @triple;
+
+		.pkp_navigation_user {
+			margin-right: 0;
+			padding-right: 0;
+			width: auto;
+		}
+	}
+}

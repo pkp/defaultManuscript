@@ -1,0 +1,41 @@
+/**
+ * @file styles/objects/issue_toc.less
+ *
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * @brief Styles applying to an issue table of contents view
+ * @link templates/frontend/objects/issue_toc.tpl
+ */
+.obj_issue_toc {
+
+	.heading .pub_id,
+	.heading .published {
+		font-family: @font-heading;
+		font-size: @font-sml;
+	}
+
+	.heading .pub_id .type,
+	.heading .published .label {
+		font-weight: @bold;
+		color: @text-light;
+		text-transform: uppercase;
+	}
+
+	.heading .pub_id .id,
+	.heading .published .value {
+		margin-left: 0.5em;
+	}
+
+	.heading .pub_id .id a {
+		color: @text;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: @primary-lift;
+			text-decoration: underline;
+		}
+	}
+}
