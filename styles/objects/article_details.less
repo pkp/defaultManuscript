@@ -1,0 +1,125 @@
+/**
+ * @file styles/objects/article_details.less
+ *
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * @brief Styles applying to a view of an article with all details
+ * @link templates/frontend/objects/article_details.tpl
+ */
+.obj_article_details {
+
+	.subtitle {
+		font-family: @font;
+	}
+
+	.authors,
+	.doi {
+		font-family: @font-alt;
+	}
+
+	.orcid a,
+	.doi a {
+		color: @text;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: @primary;
+			text-decoration: underline;
+		}
+	}
+
+	.main_entry {
+
+		.label {
+			display: inline-block;
+			padding: 0 0 @half;
+			border-bottom: 3px solid @accent;
+			text-transform: uppercase;
+		}
+
+		.doi .label {
+			display: inline;
+			padding: 0;
+			border: none;
+			text-transform: none;
+		}
+	}
+
+	.row,
+	.main_entry,
+	.entry_details {
+		border: none;
+	}
+
+	.entry_details {
+
+		.label {
+			font-weight: @bold;
+			text-transform: uppercase;
+		}
+
+		.item {
+			margin: @triple 0;
+			padding: 0;
+			border-bottom: none;
+			border-radius: @radius;
+			background: @bg-light-shade;
+			box-shadow: 0 0 1px rgba(0,0,0,0.4);
+
+			.label + .value {
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;
+			}
+		}
+
+		.sub_item {
+			padding: 0;
+			margin-bottom: @triple;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			.label {
+				color: @text-light;
+			}
+		}
+
+		.item > .label,
+		.sub_item:first-child > .label {
+			padding: 0.5em @double;
+			background: @bg-shade;
+			border-top-left-radius: @radius;
+			border-top-right-radius: @radius;
+		}
+
+		.item > .value,
+		.sub_item .value {
+			padding: @double;
+			border-radius: @radius;
+		}
+
+		.sub_item:not(:first-child) .label {
+			display: inline-block;
+			padding: 0.5em 0;
+			margin: 0 @double;
+			border-bottom: 3px solid @accent;
+		}
+
+		.galleys_links > li {
+			display: block;
+			margin-bottom: 0.5em;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			a {
+				display: block;
+			}
+		}
+	}
+}
