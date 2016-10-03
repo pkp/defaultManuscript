@@ -1,0 +1,29 @@
+/**
+ * @file styles/objects/galley_link.less
+ *
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * @brief Styles applying to a galley link button
+ * @link templates/frontend/objects/galley_link.tpl
+ */
+.obj_galley_link {
+	&:extend(.cmp_manuscript_button all);
+
+	&.restricted {
+		border-color: @bg-shade;
+		background: @bg-shade;
+		color: @text-light;
+
+		&:hover,
+		&:focus {
+			background: @bg-shade;
+			color: @text-light;
+		}
+
+		&:before {
+			color: @text-light;
+		}
+	}
+}
