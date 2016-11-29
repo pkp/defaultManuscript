@@ -29,6 +29,12 @@ class DefaultManuscriptChildThemePlugin extends ThemePlugin {
 		// Add custom styles
 		$this->modifyStyle('stylesheet', array('addLess' => array('styles/index.less')));
 
+		// Remove the typography options of the parent theme.
+		// `removeOption` was introduced in OJS 3.0.2
+		if (method_exists($this, 'removeOption')) {
+			$this->removeOption('typography');
+		}
+
 		// Load the Montserrat and Open Sans fonts
 		$this->addStyle(
 			'font',
@@ -36,19 +42,35 @@ class DefaultManuscriptChildThemePlugin extends ThemePlugin {
 			array('baseUrl' => '')
 		);
 
-		// Due to a quirk in the order that the LESS variables and stylesheets
-		// are loaded, any variables passed with the `addLessVariables` param
-		// are processed last. Since the default theme uses this param to load
-		// fonts based on theme options, we have to use this param to override
-		// those settings.
-		//
-		// In an ideal world, this wouldn't be necessary and we could include
-		// these variable declarations within variables.less. But until a
-		// solution is worked out for child themes to better interact with
-		// parent theme options, this workaround is required.
-		$additionalLessVariables = '@font:  "Noto Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;';
-		$additionalLessVariables .= '@font-heading:  "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;';
-		$this->modifyStyle('stylesheet', array('addLessVariables' => $additionalLessVariables));
+		// Dequeue any fonts loaded by parent theme
+		// `removeStyle` was introduced in OJS 3.0.2
+		if (method_exists($this, 'removeStyle')) {
+			$this->removeStyle('fontNotoSans');
+			$this->removeStyle('fontNotoSerif');
+			$this->removeStyle('fontNotoSansNotoSerif');
+			$this->removeStyle('fontLato');
+			$this->removeStyle('fontLora');
+			$this->removeStyle('fontLoraOpenSans');
+			$this->removeStyle('fontNotoSerif');
+			$this->removeStyle('fontNotoSerif');
+			$this->removeStyle('fontNotoSerif');
+			$this->removeStyle('fontNotoSerif');
+			$this->removeStyle('fontNotoSerif');
+		}
+
+		// Start with a fresh array of additionalLessVariables so that we can
+		// ignore those added by the parent theme. This gets rid of @font
+		// variable overrides from the typography option
+		$additionalLessVariables = array();
+
+		// Update colour based on theme option from parent theme
+		if ($this->getOption('baseColour') !== '#1E6292') {
+			$additionalLessVariables[] = '@bg-base:' . $this->getOption('baseColour') . ';';
+			if (!$this->isColourDark($this->getOption('baseColour'))) {
+				$additionalLessVariables[] = '@text-bg-base:rgba(0,0,0,0.84);';
+			}
+			$this->modifyStyle('stylesheet', array('addLessVariables' => join('', $additionalLessVariables)));
+		}
 	}
 
 	/**
