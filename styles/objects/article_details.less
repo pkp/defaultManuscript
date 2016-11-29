@@ -111,9 +111,16 @@
 			border-bottom: 3px solid @accent;
 		}
 
-		.cover_image img {
-			display: block;
-			border-radius: @radius;
+		.cover_image {
+			background: transparent;
+			box-shadow: none;
+
+			img {
+				display: block;
+				border-radius: @radius;
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 
 		.item.galleys {
