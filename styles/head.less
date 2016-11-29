@@ -55,7 +55,7 @@
 
 		&:hover,
 		&:focus {
-			color: @primary;
+			color: @bg-base;
 		}
 	}
 
@@ -65,7 +65,7 @@
 
 		&:hover,
 		&:focus {
-			border-color: @primary;
+			border-color: @bg-base;
 		}
 	}
 
@@ -156,6 +156,11 @@
 		font-size: @font-sml;
 		color: @text-light;
 		font-weight: @bold;
+	}
+
+	ul a:hover,
+	ul a:focus {
+		border-color: @bg-base;
 	}
 
 	@media(min-width: @screen-desktop) {
