@@ -15,4 +15,5 @@
 	<message key="plugins.themes.default-manuscript.name">Manuscript (Default child theme)</message>
 	<message key="plugins.themes.default-manuscript.description">A clean, simple theme with a boxed layout that mimics a paper document.</message>
 	<message key="plugins.themes.default-manuscript.option.typography.montserrat_notoSerif">Montserrat/Noto Serif</message>
+	<message key="plugins.themes.default-manuscript.option.accentColour.label">Accent Colour</message>
 </locale>

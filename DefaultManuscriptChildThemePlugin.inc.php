@@ -35,6 +35,13 @@ class DefaultManuscriptChildThemePlugin extends ThemePlugin {
 			$this->removeOption('typography');
 		}
 
+		// Add the option for an accent color
+		$this->addOption('accentColour', 'colour', array(
+			'label' => 'plugins.themes.default-manuscript.option.accentColour.label',
+			'description' => 'plugins.themes.default.option.colour.description',
+			'default' => '#F7BC4A',
+		));
+
 		// Load the Montserrat and Open Sans fonts
 		$this->addStyle(
 			'font',
@@ -69,6 +76,14 @@ class DefaultManuscriptChildThemePlugin extends ThemePlugin {
 			if (!$this->isColourDark($this->getOption('baseColour'))) {
 				$additionalLessVariables[] = '@text-bg-base:rgba(0,0,0,0.84);';
 			}
+		}
+
+		// Update accent colour based on theme option
+		if ($this->getOption('accentColour') !== '#F7BC4A') {
+			$additionalLessVariables[] = '@accent:' . $this->getOption('accentColour') . ';';
+		}
+
+		if ($this->getOption('baseColour') && $this->getOption('accentColour')) {
 			$this->modifyStyle('stylesheet', array('addLessVariables' => join('', $additionalLessVariables)));
 		}
 	}
