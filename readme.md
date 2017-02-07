@@ -20,3 +20,8 @@ This theme requires at least OJS 3.0.2. Some versions of this theme are only com
 ## Contributors
 
 * Nate Wright ([PKP](https://pkp.sfu.ca/))
+
+## Changelog
+
+**1.0.0** (2017-02-07)
+* Initial release
