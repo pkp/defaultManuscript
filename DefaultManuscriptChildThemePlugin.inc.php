@@ -37,7 +37,7 @@ class DefaultManuscriptChildThemePlugin extends ThemePlugin {
 
 		// Add the option for an accent color
 		$this->addOption('accentColour', 'colour', array(
-			'label' => 'plugins.themes.default-manuscript.option.accentColour.label',
+			'label' => 'plugins.themes.defaultManuscript.option.accentColour.label',
 			'description' => 'plugins.themes.default.option.colour.description',
 			'default' => '#F7BC4A',
 		));
@@ -93,7 +93,7 @@ class DefaultManuscriptChildThemePlugin extends ThemePlugin {
 	 * @return string
 	 */
 	function getDisplayName() {
-		return __('plugins.themes.default-manuscript.name');
+		return __('plugins.themes.defaultManuscript.name');
 	}
 
 	/**
@@ -101,7 +101,7 @@ class DefaultManuscriptChildThemePlugin extends ThemePlugin {
 	 * @return string
 	 */
 	function getDescription() {
-		return __('plugins.themes.default-manuscript.description');
+		return __('plugins.themes.defaultManuscript.description');
 	}
 }
 
