@@ -15,13 +15,19 @@ You can now see the Manuscript theme on your website. You can change the colors 
 
 This theme requires at least OJS 3.0.2. Some versions of this theme are only compatible with certain releases of OJS. This release list indicates which versions are compatible.
 
+* **defaultManuscript v1.0.1** is compatible with OJS 3.1, 3.0.2.
 * **defaultManuscript v1.0.0** is compatible with OJS 3.0.2.
 
 ## Contributors
 
-* Nate Wright ([PKP](https://pkp.sfu.ca/))
+* Nate Wright, @NateWr ([PKP](https://pkp.sfu.ca/))
+* Stefan Weil, @stweil ([UB Mannheim](https://www.bib.uni-mannheim.de/))
 
 ## Changelog
+
+**1.0.1** (2017-10-24)
+* Add: Style restricted galley links
+* Add: German translation
 
 **1.0.0** (2017-02-07)
 * Initial release
