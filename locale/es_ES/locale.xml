@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * plugins/themes/defaultManuscript/locale/es_ES/locale.xml
+  *
+  * Copyright (c) 2014-2017 Simon Fraser University
+  * Copyright (c) 2003-2017 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings (contrib).
+  -->
+
+<locale name="es_ES" full_name="Español (España)">
+	<message key="plugins.themes.defaultManuscript.name">Manuscript (Tema hijo del tema predeterminado)</message>
+	<message key="plugins.themes.defaultManuscript.description">Un tema limpio y sencillo con un diseño en caja que imita un documento en papel.</message>
+	<message key="plugins.themes.defaultManuscript.option.typography.montserrat_notoSerif">Montserrat/Noto Serif</message>
+	<message key="plugins.themes.defaultManuscript.option.accentColour.label">Color de destacados</message>
+</locale>
