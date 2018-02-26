@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * locale/da_DK/locale.xml
+  *
+  * Copyright (c) 2014-2017 Simon Fraser University
+  * Copyright (c) 2003-2017 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings.
+  -->
+
+<locale name="da_DK" full_name="Dansk">
+	<message key="plugins.themes.defaultManuscript.name">Manuskript (Standard produkt-tema/child theme)</message>
+	<message key="plugins.themes.defaultManuscript.description">Et rent, enkelt tema med et layout, der imiterer et papirdokument.</message>
+	<message key="plugins.themes.defaultManuscript.option.typography.montserrat_notoSerif">Montserrat / Noto Serif</message>
+	<message key="plugins.themes.defaultManuscript.option.accentColour.label">Accent-farver</message>
+</locale>
