@@ -53,6 +53,25 @@
 // Pagination (eg - issue archive)
 .cmp_pagination {
 	font-family: @font-heading;
+
+	a {
+		font-weight: @bold;
+		text-transform: uppercase;
+	}
+
+	.prev {
+
+		&:before {
+			content: @fa-var-chevron-left;
+		}
+	}
+
+	.next {
+
+		&:after {
+			content: @fa-var-chevron-right;
+		}
+	}
 }
 
 
