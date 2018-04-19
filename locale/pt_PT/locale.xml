@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * plugins/themes/defaultManuscript/locale/pt_PT/locale.xml
+  *
+  * Copyright (c) 2014-2017 Simon Fraser University Library
+  * Copyright (c) 2003-2017 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings
+  -->
+
+<locale name="pt_PT" full_name="Português (Portugal)">
+	<message key="plugins.themes.defaultManuscript.name">Manuscript (Tema filho do tema Default)</message>
+	<message key="plugins.themes.defaultManuscript.description">Um tema, simples, limpo, com um layout em caixa, que pretende reproduzir uma folha de papel.</message>
+	<message key="plugins.themes.defaultManuscript.option.typography.montserrat_notoSerif">Montserrat/Noto Serif</message>
+	<message key="plugins.themes.defaultManuscript.option.accentColour.label">Cores de destaque</message>
+</locale>
