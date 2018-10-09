@@ -36,11 +36,11 @@ class DefaultManuscriptChildThemePlugin extends ThemePlugin {
 		}
 
 		// Add the option for an accent color
-		$this->addOption('accentColour', 'colour', array(
-			'label' => 'plugins.themes.defaultManuscript.option.accentColour.label',
-			'description' => 'plugins.themes.default.option.colour.description',
+		$this->addOption('accentColour', 'FieldColor', [
+			'label' => __('plugins.themes.defaultManuscript.option.accentColour.label'),
+			'description' => __('plugins.themes.default.option.colour.description'),
 			'default' => '#F7BC4A',
-		));
+		]);
 
 		// Load the Montserrat and Open Sans fonts
 		$this->addStyle(
