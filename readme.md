@@ -6,10 +6,10 @@ A clean, simple theme with a boxed layout that mimics a paper document.
 
 1. Download the [latest release](https://github.com/NateWr/defaultManuscript/releases).
 2. Unpack the .zip file and move the `defaultManuscript` directory to your OJS installation at `/plugins/themes/defaultManuscript`.
-3. Login to the admin area of your OJS website. Browse to the Settings > Website > Plugins page and enable the theme named Manuscript (Default child theme).
-4. Browse to the Settings > Website > Appearance page and select Manuscript (Default child theme) from the theme option and save your change.
+3. Login to the admin area of your OJS website. Browse to the `Settings` > `Website` > `Plugins` page and enable the theme named Manuscript (Default child theme).
+4. Browse to the `Settings` > `Website` > `Appearance` page and select `Manuscript (Default child theme)` from the theme option and save your change.
 
-You can now see the Manuscript theme on your website. You can change the colors by browsing back to the Settings > Website > Appearance page (or refresh the page if it is still open).
+You can now see the Manuscript theme on your website. You can change the colors by browsing back to the `Settings` > `Website` > `Appearance` page (or refresh the page if it is still open).
 
 ## Version Compatibility
 
