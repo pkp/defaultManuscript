@@ -27,6 +27,6 @@ describe('Theme plugin tests', function() {
 
 	it('Views the theme', function() {
 		cy.visit('');
-		cy.get('div.pkp_site_name a').should('have.css', 'text-transform', 'uppercase');
+		cy.get('.pkp_site_name .is_text').should('have.css', 'text-transform', 'uppercase');
 	});
 })
