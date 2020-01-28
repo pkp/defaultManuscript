@@ -32,4 +32,4 @@ install:
   - $(npm bin)/cypress run --spec "cypress/tests/data/10-Installation.spec.js,cypress/tests/data/20-CreateContext.spec.js"
 
 script:
-  - $(npm bin)/cypress run --config integrationFolder=plugins/generic/staticPages/cypress/tests
+  - $(npm bin)/cypress run --config integrationFolder=plugins/themes/defaultManuscript/cypress/tests
