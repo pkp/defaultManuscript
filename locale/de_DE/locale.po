@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-02-18T18:21:04+00:00\n"
+"PO-Revision-Date: 2020-02-18T18:21:04+00:00\n"
+"Language: \n"
+
+msgid "plugins.themes.defaultManuscript.name"
+msgstr "Manuskript (abgeleitet vom Standard-Thema)"
+
+msgid "plugins.themes.defaultManuscript.description"
+msgstr "Ein reines, einfaches Thema mit einem verschachtelten Layout, das ein Papierdokument nachbildet."
+
+msgid "plugins.themes.defaultManuscript.option.typography.montserrat_notoSerif"
+msgstr "Montserrat/Noto Serif"
+
+msgid "plugins.themes.defaultManuscript.option.accentColour.label"
+msgstr "Farbe für Hervorhebungen"
