@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * plugins/themes/defaultManuscript/locale/ar_IQ/locale.xml
+  *
+  * Copyright (c) 2014-2019 Simon Fraser University
+  * Copyright (c) 2003-2019 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings
+  -->
+
+<locale name="ar_IQ" full_name="العربية">
+	<message key="plugins.themes.defaultManuscript.name">Manuscript (نمط إفتراضي فرعي)</message>
+	<message key="plugins.themes.defaultManuscript.description">نمط بسيط ذو تخطيط صندوقي يحاكي ورقة المستند.</message>
+	<message key="plugins.themes.defaultManuscript.option.typography.montserrat_notoSerif">Montserrat/Noto Serif</message>
+	<message key="plugins.themes.defaultManuscript.option.accentColour.label">لون التأكيد</message>
+</locale>
