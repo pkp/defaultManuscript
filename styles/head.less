@@ -14,29 +14,41 @@
 	padding-top: 0;
 }
 
-.pkp_site_name_wrapper,
-.pkp_navigation_primary_row {
+.pkp_site_name_wrapper {
+	background: @bg-base;
+}
+
+.pkp_site_name_wrapper {
 	padding-left: @triple;
 	padding-right: @triple;
 }
 
 .pkp_site_name {
-	padding-top: @base + @half;
-	padding-bottom: @base + @half;
 
 	.is_text {
-		font-size: @font-lead;
+		font-size: @font-base;
 		text-transform: uppercase;
 	}
 
 	@media(min-width: @screen-desktop) {
 		width: 75%;
 		margin-left: 0;
+		padding-top: @base + @half;
+		padding-bottom: @base + @half;
+
+		.is_text {
+			font-size: @font-lead;
+		}
 	}
 }
 
-.pkp_navigation_primary_row {
-	background: @bg;
+@media(min-width: @screen-desktop) {
+
+	.pkp_navigation_primary_row {
+		background: @bg;
+		padding-left: @triple;
+		padding-right: @triple;
+	}
 }
 
 .pkp_navigation_primary_wrapper {
@@ -49,14 +61,8 @@
 	a {
 		font-family: @font-heading;
 		font-size: @font-sml;
-		color: @text-light;
 		font-weight: @bold;
 		text-transform: uppercase;
-
-		&:hover,
-		&:focus {
-			color: @bg-base;
-		}
 	}
 
 	> li > a {
@@ -74,21 +80,33 @@
 		border-color: transparent;
 	}
 
-	ul {
-		background: @bg-base;
+	[aria-expanded="true"]:before {
+		border-bottom-color: @bg-base;
+	}
+
+	@media(min-width: @screen-desktop) {
 
 		a {
-			color: @text-bg-base;
+			color: @text-light;
 
 			&:hover,
 			&:focus {
-				border-color: transparent;
+				color: @bg-base;
 			}
 		}
-	}
 
-	[aria-expanded="true"]:before {
-		border-bottom-color: @bg-base;
+		ul {
+			background: @bg-base;
+
+			a {
+				color: @text-bg-base;
+
+				&:hover,
+				&:focus {
+					border-color: transparent;
+				}
+			}
+		}
 	}
 }
 
@@ -154,21 +172,25 @@
 	a {
 		font-family: @font-heading;
 		font-size: @font-sml;
-		color: @text-light;
 		font-weight: @bold;
 	}
 
-	ul a:hover,
-	ul a:focus {
-		border-color: @bg-base;
-	}
-
 	@media(min-width: @screen-desktop) {
-		top: 25px;
+		top: 13px;
 		right: 0;
 		left: auto;
 		width: 25%;
+		transform: none;
 		padding-right: @triple;
+
+		a {
+			color: @text-light;
+		}
+
+		ul a:hover,
+		ul a:focus {
+			border-color: @bg-base;
+		}
 
 		.pkp_navigation_user {
 			margin-right: 0;
