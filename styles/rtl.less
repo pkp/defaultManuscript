@@ -12,6 +12,13 @@
 body[dir="rtl"] {
 
 	@media (min-width: @screen-desktop) {
+
+		.pkp_navigation_user_wrapper,
+		.pkp_navigation_user > li:hover ul {
+			right: auto;
+			left: 0;
+		}
+
 		.pkp_structure_sidebar::before {
 			right: auto;
 			left: 0;
