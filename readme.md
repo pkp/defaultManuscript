@@ -28,3 +28,8 @@ This theme can be installed through the **Plugin Gallery** in Open Journal Syste
 
 **1.0.0** (2017-02-07)
 * Initial release
+
+# License
+This theme is released under the GPL license.
+
+The Montserrat font is distributed under the terms of the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
