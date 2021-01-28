@@ -30,10 +30,8 @@ class DefaultManuscriptChildThemePlugin extends ThemePlugin {
 		$this->modifyStyle('stylesheet', array('addLess' => array('styles/index.less')));
 
 		// Remove the typography options of the parent theme.
-		// `removeOption` was introduced in OJS 3.0.2
-		if (method_exists($this, 'removeOption')) {
-			$this->removeOption('typography');
-		}
+		$this->removeOption('typography');
+		$this->removeOption('useHomepageImageAsHeader');
 
 		// Add the option for an accent color
 		$this->addOption('accentColour', 'FieldColor', [
