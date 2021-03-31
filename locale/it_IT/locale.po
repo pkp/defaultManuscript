@@ -11,14 +11,14 @@ msgstr ""
 "PO-Revision-Date: 2020-02-18T18:21:04+00:00\n"
 "Language: \n"
 
-msgid "plugins.themes.defaultManuscriptchild.name"
+msgid "plugins.themes.defaultManuscript.name"
 msgstr "Tema figlio SAT (Manuscript)"
 
-msgid "plugins.themes.defaultManuscriptchild.description"
+msgid "plugins.themes.defaultManuscript.description"
 msgstr "Un tema filglio di Manuscript (chiaro, semplice e con una cornice che mima un documento cartaceo) adattato per Studia Theodisca e Studia Austriaca."
 
-msgid "plugins.themes.defaultManuscriptchild.option.typography.montserrat_notoSerif"
+msgid "plugins.themes.defaultManuscript.option.typography.montserrat_notoSerif"
 msgstr "Montserrat/Noto Serif"
 
-msgid "plugins.themes.defaultManuscriptchild.option.accentColour.label"
+msgid "plugins.themes.defaultManuscript.option.accentColour.label"
 msgstr "Accent Colour"
