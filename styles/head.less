@@ -170,6 +170,18 @@
 		}
 	}
 
+	.pkp_navigation_primary {
+
+		// Reproduce positioning of dropdown menu from Popper.js
+		> li:hover ul {
+			position: absolute;
+			transform: translate3d(6px, 40px, 0px);
+			top: 0;
+			left: 0;
+			will-change: transform;
+		}
+	}
+
 	.pkp_navigation_user {
 
 		> li > a {
