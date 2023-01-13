@@ -12,13 +12,13 @@ msgstr ""
 "Language: \n"
 
 msgid "plugins.themes.defaultManuscript.name"
-msgstr "Tema figlio SAT (Manuscript)"
+msgstr "Manuscript (Default child theme)"
 
 msgid "plugins.themes.defaultManuscript.description"
-msgstr "Un tema filglio di Manuscript (chiaro, semplice e con una cornice che mima un documento cartaceo) adattato per Studia Theodisca e Studia Austriaca."
+msgstr "A clean, simple theme with a boxed layout that mimics a paper document.Un tema chiaro, semplice e con una cornice che mima un documento cartaceo."
 
 msgid "plugins.themes.defaultManuscript.option.typography.montserrat_notoSerif"
 msgstr "Montserrat/Noto Serif"
 
 msgid "plugins.themes.defaultManuscript.option.accentColour.label"
-msgstr "Accent Colour"
+msgstr "Colore in risalto"
