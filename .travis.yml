@@ -4,8 +4,13 @@
 language: php
 
 addons:
+  chrome: beta
+  postgresql: "9.5"
   apt:
     update: true
+    packages:
+      - libvulkan1
+      - libu2f-udev
 
 sudo: required
 
@@ -28,7 +33,7 @@ install:
   - npm i g -npm && npm install && npm run build
   - ln -s ${TRAVIS_BUILD_DIR} ~/${APPLICATION}/plugins/themes/defaultManuscript
   # Install OJS & prep data environment
-  - $(npm bin)/cypress run --spec "cypress/tests/data/10-Installation.spec.js,cypress/tests/data/20-CreateContext.spec.js"
+  - $(npm bin)/cypress run --spec "cypress/tests/data/10-ApplicationSetup/10-Installation.cy.js,cypress/tests/data/10-ApplicationSetup/20-CreateContext.cy.js"
 
 script:
-  - $(npm bin)/cypress run --config integrationFolder=plugins/themes/defaultManuscript/cypress/tests
+  - $(npm bin)/cypress run --config '{"specPattern":["plugins/themes/defaultManuscript/cypress/tests/functional/*.cy.js"]}'

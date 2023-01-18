@@ -1,5 +1,5 @@
 /**
- * @file cypress/tests/functional/defaultManuscript.spec.js
+ * @file cypress/tests/functional/defaultManuscript.cy.js
  *
  * Copyright (c) 2014-2020 Simon Fraser University
  * Copyright (c) 2000-2020 John Willinsky
