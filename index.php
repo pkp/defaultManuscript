@@ -16,8 +16,5 @@
  *
  */
 
-require_once('DefaultManuscriptChildThemePlugin.inc.php');
 
-return new DefaultManuscriptChildThemePlugin();
-
-?>
+return new \APP\plugins\themes\defaultManuscript\DefaultManuscriptChildThemePlugin();

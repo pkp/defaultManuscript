@@ -12,7 +12,9 @@
  *
  * @brief Default theme
  */
-import('lib.pkp.classes.plugins.ThemePlugin');
+namespace APP\plugins\themes\defaultManuscript;
+
+use PKP\plugins\ThemePlugin;
 
 class DefaultManuscriptChildThemePlugin extends ThemePlugin {
 	/**
