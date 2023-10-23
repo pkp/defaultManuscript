@@ -35,7 +35,7 @@ describe("Theme plugin tests", function () {
   });
 
   it("Views the theme", function () {
-    cy.visit("");
+    cy.visit("/");
     // to clear the file cache
     cy.reload(true);
     cy.get(".pkp_site_name .is_text").should(
