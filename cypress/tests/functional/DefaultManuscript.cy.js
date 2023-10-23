@@ -34,7 +34,7 @@ describe("Theme plugin tests", function () {
     cy.get('#theme button:contains("Save")').click();
   });
 
-  it.only("Views the theme", function () {
+  it("Views the theme", function () {
     cy.visit("/");
     cy.get(".pkp_site_name .is_text").should(
       "have.css",

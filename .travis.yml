@@ -31,7 +31,7 @@ install:
   # Build/install dependencies
   - lib/pkp/tools/travis/install-composer-dependencies.sh
   - npm i g -npm && npm install && npm run build
-  - ln -s ${TRAVIS_BUILD_DIR} ~/${APPLICATION}/plugins/themes/defaultManuscript
+  - mv ${TRAVIS_BUILD_DIR} ~/${APPLICATION}/plugins/themes/
   # Install OJS & prep data environment
   - $(npm bin)/cypress run --spec "cypress/tests/data/10-ApplicationSetup/10-Installation.cy.js,cypress/tests/data/10-ApplicationSetup/20-CreateContext.cy.js"
 
