@@ -37,6 +37,3 @@ install:
 
 script:
   - $(npm bin)/cypress run --config '{"specPattern":["plugins/themes/defaultManuscript/cypress/tests/functional/*.cy.js"]}'
-
-after_failure:
-  - base64 '/home/travis/ojs/cypress/screenshots/DefaultManuscript.cy.js/Theme plugin tests -- Views the theme (failed).png'
