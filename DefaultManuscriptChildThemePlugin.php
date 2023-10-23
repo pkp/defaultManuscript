@@ -1,18 +1,20 @@
 <?php
 
 /**
- * @file plugins/themes/default/DefaultManuscriptChildThemePlugin.inc.php
+ * @file plugins/themes/default/DefaultManuscriptChildThemePlugin.php
  *
  * Copyright (c) 2014-2020 Simon Fraser University
  * Copyright (c) 2003-2020 John Willinsky
- * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ * Distributed under the GNU GPL v3. For full terms see the file LICENSE.
  *
  * @class DefaultManuscriptChildThemePlugin
  * @ingroup plugins_themes_default_manuscript
  *
  * @brief Default theme
  */
-import('lib.pkp.classes.plugins.ThemePlugin');
+namespace APP\plugins\themes\defaultManuscript;
+
+use PKP\plugins\ThemePlugin;
 
 class DefaultManuscriptChildThemePlugin extends ThemePlugin {
 	/**
@@ -94,5 +96,3 @@ class DefaultManuscriptChildThemePlugin extends ThemePlugin {
 		return __('plugins.themes.defaultManuscript.description');
 	}
 }
-
-?>
