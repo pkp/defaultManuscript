@@ -1,6 +1,9 @@
 # @file
 # .travis.yml - PKP Plugins Integration
 
+dist: focal
+os: linux
+
 language: php
 
 addons:
