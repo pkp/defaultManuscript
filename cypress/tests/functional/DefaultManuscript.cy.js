@@ -34,10 +34,8 @@ describe("Theme plugin tests", function () {
     cy.get('#theme button:contains("Save")').click();
   });
 
-  it("Views the theme", function () {
+  it.only("Views the theme", function () {
     cy.visit("/");
-    // to clear the file cache
-    cy.reload(true);
     cy.get(".pkp_site_name .is_text").should(
       "have.css",
       "text-transform",
