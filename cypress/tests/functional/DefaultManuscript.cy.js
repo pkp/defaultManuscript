@@ -7,9 +7,9 @@
  *
  */
 
-describe('Theme plugin tests', function() {
-	it('Enables and selects the theme', function() {
-    cy.login('admin', 'admin', 'publicknowledge');
+describe("Theme plugin tests", function () {
+  it("Enables and selects the theme", function () {
+    cy.login("admin", "admin", "publicknowledge");
 
     cy.get('a:contains("Website")').click();
     cy.get('button[id="plugins-button"]').click();
@@ -34,8 +34,14 @@ describe('Theme plugin tests', function() {
     cy.get('#theme button:contains("Save")').click();
   });
 
-	it('Views the theme', function() {
-		cy.visit('');
-		cy.get('.pkp_site_name .is_text').should('have.css', 'text-transform', 'uppercase');
-	});
-})
+  it("Views the theme", function () {
+    cy.visit("");
+    // to clear the file cache
+    cy.reload(true);
+    cy.get(".pkp_site_name .is_text").should(
+      "have.css",
+      "text-transform",
+      "uppercase"
+    );
+  });
+});
