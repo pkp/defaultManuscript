@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Marie-Hélène Vézina [UdeMontréal] <marie-"
+"helene.vezina@umontreal.ca>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-06-18T19:37:25+00:00\n"
+"PO-Revision-Date: 2024-06-18T19:37:25+00:00\n"
+"Language: fr_CA\n"
+
+msgid "plugins.themes.defaultManuscript.name"
+msgstr "Thème Manuscript (Enfant du thème par défaut)"
+
+msgid "plugins.themes.defaultManuscript.description"
+msgstr "Un thème propre et simple avec une mise en page encadrée qui imite un document papier."
+
+msgid "plugins.themes.defaultManuscript.option.typography.montserrat_notoSerif"
+msgstr "Montserrat/Noto Serif"
+
+msgid "plugins.themes.defaultManuscript.option.accentColour.label"
+msgstr "Couleur d'accentuation"
