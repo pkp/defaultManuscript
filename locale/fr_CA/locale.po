@@ -16,7 +16,7 @@ msgid "plugins.themes.defaultManuscript.name"
 msgstr "Thème Manuscript (Enfant du thème par défaut)"
 
 msgid "plugins.themes.defaultManuscript.description"
-msgstr "Un thème propre et simple avec une mise en page encadrée qui imite un document papier."
+msgstr "Un thème épuré et simple avec une mise en page encadrée qui imite un document papier."
 
 msgid "plugins.themes.defaultManuscript.option.typography.montserrat_notoSerif"
 msgstr "Montserrat/Noto Serif"
