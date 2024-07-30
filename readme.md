@@ -2,6 +2,10 @@
 
 A clean, simple theme with a boxed layout that mimics a paper document.
 
+|main | 3.4 | 3.3 |
+| ---- | ---- | ---- |
+|  [![defaultManuscript](https://github.com/pkp/defaultManuscript/actions/workflows/main.yml/badge.svg)](https://github.com/pkp/defaultManuscript/actions/workflows/main.yml)   | [![defaultManuscript](https://github.com/pkp/defaultManuscript/actions/workflows/stable-3_4_0.yml/badge.svg)](https://github.com/pkp/defaultManuscript/actions/workflows/stable-3_4_0.yml)                   | [![defaultManuscript](https://github.com/pkp/defaultManuscript/actions/workflows/stable-3_3_0.yml/badge.svg)](https://github.com/pkp/defaultManuscript/actions/workflows/stable-3_3_0.yml)             |                                                                                                                                                                                       | ---                                                                                                                                                                                                       | ---
+
 ## Installation
 
 This theme can be installed through the **Plugin Gallery** in Open Journal Systems. If it's not available in the plugin gallery, you may need to update Open Journal Systems to a compatible version.
