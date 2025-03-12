@@ -2,9 +2,9 @@
 
 A clean, simple theme with a boxed layout that mimics a paper document.
 
-|main | 3.4 | 3.3 |
-| ---- | ---- | ---- |
-|  [![defaultManuscript](https://github.com/pkp/defaultManuscript/actions/workflows/main.yml/badge.svg)](https://github.com/pkp/defaultManuscript/actions/workflows/main.yml)   | [![defaultManuscript](https://github.com/pkp/defaultManuscript/actions/workflows/stable-3_4_0.yml/badge.svg)](https://github.com/pkp/defaultManuscript/actions/workflows/stable-3_4_0.yml)                   | [![defaultManuscript](https://github.com/pkp/defaultManuscript/actions/workflows/stable-3_3_0.yml/badge.svg)](https://github.com/pkp/defaultManuscript/actions/workflows/stable-3_3_0.yml)             |                                                                                                                                                                                       | ---                                                                                                                                                                                                       | ---
+| main                                                                                                                                                                       | 3.5                                                                                                                                                                                        | 3.4                                                                                                                                                                                        | 3.3                                                                                                                                                                                        |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [![defaultManuscript](https://github.com/pkp/defaultManuscript/actions/workflows/main.yml/badge.svg)](https://github.com/pkp/defaultManuscript/actions/workflows/main.yml) | [![defaultManuscript](https://github.com/pkp/defaultManuscript/actions/workflows/stable-3_5_0.yml/badge.svg)](https://github.com/pkp/defaultManuscript/actions/workflows/stable-3_4_0.yml) | [![defaultManuscript](https://github.com/pkp/defaultManuscript/actions/workflows/stable-3_4_0.yml/badge.svg)](https://github.com/pkp/defaultManuscript/actions/workflows/stable-3_4_0.yml) | [![defaultManuscript](https://github.com/pkp/defaultManuscript/actions/workflows/stable-3_3_0.yml/badge.svg)](https://github.com/pkp/defaultManuscript/actions/workflows/stable-3_3_0.yml) | 
 
 ## Installation
 
@@ -12,7 +12,7 @@ This theme can be installed through the **Plugin Gallery** in Open Journal Syste
 
 ## Contributors
 
-* Nate Wright, @NateWr ([PKP](https://pkp.sfu.ca/))
+* Nate Wright, @NateWr
 * Stefan Weil, @stweil ([UB Mannheim](https://www.bib.uni-mannheim.de/))
 
 ## Changelog
@@ -33,7 +33,8 @@ This theme can be installed through the **Plugin Gallery** in Open Journal Syste
 **1.0.0** (2017-02-07)
 * Initial release
 
-# License
+## License
+
 This theme is released under the GPL license.
 
 The Montserrat font is distributed under the terms of the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
