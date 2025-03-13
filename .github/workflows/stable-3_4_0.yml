@@ -19,19 +19,12 @@ jobs:
           - application: ojs
             php-version: 8.2
             database: pgsql
-
     name: defaultManuscript
     steps:
       - uses: pkp/pkp-github-actions@v1
         with:
-         node_version: 16
-         branch: stable-3_4_0
-         repository: pkp
-         plugin: true
-
-
-
-
-
-
+          node_version: 16
+          branch: 'stable-3_4_0'
+          repository: pkp
+          plugin: true
      
