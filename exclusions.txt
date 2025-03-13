@@ -1,0 +1,4 @@
+defaultManuscript/.gitignore
+defaultManuscript/.github
+defaultManuscript/cypress
+defaultManuscript/exclusions.txt
