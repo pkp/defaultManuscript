@@ -16,11 +16,8 @@
 
 .pkp_site_name_wrapper {
 	background: @bg-base;
-}
-
-.pkp_site_name_wrapper {
-	padding-left: @triple;
-	padding-right: @triple;
+	padding-left: @double; // Reduced from @triple
+	padding-right: @double; // Reduced from @triple
 }
 
 .pkp_site_name {
@@ -33,8 +30,8 @@
 	@media(min-width: @screen-desktop) {
 		width: 75%;
 		margin-left: 0;
-		padding-top: @base + @half;
-		padding-bottom: @base + @half;
+		padding-top: @half; // Reduced from @base + @half
+		padding-bottom: @half; // Reduced from @base + @half
 
 		.is_text {
 			font-size: @font-lead;
@@ -42,12 +39,158 @@
 	}
 }
 
+// Styles for Mobile Navigation (using @screen-md-max as breakpoint)
+@media (max-width: @screen-md-max) {
+
+	.pkp_site_name_wrapper {
+		// Potentially reduce padding further on mobile if needed
+		// padding-left: @base;
+		// padding-right: @base;
+	}
+
+	.pkp_site_name {
+		text-align: center; // Center site name on mobile
+		width: auto; // Allow it to take available width
+		padding-top: @base;
+		padding-bottom: @base;
+
+		.is_text {
+			font-size: @font-large; // Adjust size for mobile header
+		}
+	}
+
+	// Hide desktop primary navigation row
+	.pkp_navigation_primary_row {
+		display: none;
+	}
+
+	// Reset fixed positioning for user navigation, make it flow
+	.pkp_navigation_user_wrapper {
+		position: static;
+		width: 100%;
+		background: transparent;
+		padding: @half @base; // Add some padding
+		text-align: center; // Center user links
+
+		a {
+			color: @text-strong; // Standard text color
+			padding: @half;
+		}
+		.pkp_navigation_user {
+			justify-content: center; // Center items if it's flex
+			display: block; // Stack items
+			> li {
+				margin-left: 0;
+				margin-bottom: @half;
+				display: inline-block; // Or block if they should take full width
+				margin-right: @half; // Spacing for inline-block items
+			}
+		}
+	}
+
+	// Style for the mobile navigation toggle button
+	.pkp_site_nav_toggle {
+		display: block;
+		position: absolute;
+		top: 0; // Align with top of pkp_head_wrapper or pkp_site_name_wrapper
+		right: @base;
+		font-size: 1.8em;
+		background: transparent;
+		border: none;
+		color: @text-bg-base; // Color for hamburger on header background
+		padding: @half @base; // Make it easier to tap
+		z-index: 1010; // Ensure it's on top
+
+		// Adjust top position to vertically center with site name if site name wrapper has padding
+		// Example: if pkp_site_name_wrapper has padding-top/bottom of @base (1em)
+		// and site name font is ~1.2em, total height ~3.4em. Toggle line-height ~1.8em.
+		// (3.4em - 1.8em) / 2 = 0.8em top padding for wrapper, or adjust toggle top.
+		// This needs specific values from final header height.
+		// For now, a simple top/right.
+	}
+
+	// Desktop #navigationPrimary list (if not used for mobile dropdown)
+	// This is often hidden if #mainNavigationDropdown provides the mobile menu content
+	#navigationPrimary {
+		// If #mainNavigationDropdown is used, hide this:
+		// display: none;
+		// If #navigationPrimary IS the dropdown, its > li are already display:block.
+		// For now, assume a separate #mainNavigationDropdown will be styled.
+	}
+
+	.pkp_navigation_search_wrapper {
+		// Decide how to handle search on mobile.
+		// Option 1: Hide it if it's in the mainNavigationDropdown.
+		// display: none;
+		// Option 2: Style it as an icon or small link in the header.
+		text-align: center;
+		padding-bottom: @base;
+		a {
+			padding: @half;
+		}
+	}
+
+	// Styles for the mobile navigation panel itself
+	// This panel is typically hidden by default and shown by JavaScript when the toggle is clicked.
+	#mainNavigationDropdown {
+		// Basic styling, assuming it's a block that appears below the header or overlays
+		background-color: @bg-shade; // Use a light shade for dropdown background
+		border-top: 1px solid @bg-border-color;
+		position: absolute; // Positioned relative to .pkp_head_wrapper or .pkp_site_name_wrapper
+		top: 100%; // Place it below the header (assuming header is not fixed height)
+		left: 0;
+		width: 100%;
+		z-index: 1005; // Below toggle (1010) but above other content
+		padding: 0; // Remove padding from container, apply to links
+		box-shadow: @shadow-sm;
+		// IMPORTANT: Actual display:none/block is usually handled by JS via inline style or class.
+		// CSS alone can't easily do toggle without :target hack or checkbox hack.
+		// We assume JS will make it visible. Styles here are for its appearance when visible.
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li {
+				display: block; // Stack items vertically
+				a {
+					display: block;
+					padding: @base;
+					text-decoration: none;
+					color: @text-strong; // Dark text on light background
+					border-bottom: 1px solid lighten(@bg-border-color, 5%);
+
+					&:hover, &:focus {
+						background-color: darken(@bg-shade, 3%); // Slightly darken on hover
+						color: @primary;
+					}
+				}
+				&:last-child a {
+					border-bottom: none;
+				}
+			}
+		}
+
+		// This rule ensures it's hidden on desktop, in case JS doesn't do it.
+		@media (min-width: @screen-md-min) { // md-min is desktop
+			display: none !important;
+		}
+	}
+}
+
 @media(min-width: @screen-desktop) {
 
+	// Approximate height of the fixed user navigation bar
+	@user-nav-height: 2.5em;
+
 	.pkp_navigation_primary_row {
-		background: @bg;
-		padding-left: @triple;
-		padding-right: @triple;
+		background: @light-slate-gray; // Changed from @bg to reduce flat white
+		padding-left: @double; // Reduced from @triple
+		padding-right: @double; // Reduced from @triple
+		position: sticky;
+		top: @user-nav-height; // Stick below the fixed user navigation
+		z-index: 999; // Below user nav (1000) but above content
 	}
 }
 
@@ -57,6 +200,12 @@
 
 // Use the ID so that we override all styles in the base theme
 #navigationPrimary {
+
+	// Ensure list items stack on mobile
+	> li {
+		display: block;
+		margin-bottom: @half; // Add some space between stacked items
+	}
 
 	a {
 		font-family: @font-heading;
@@ -86,6 +235,33 @@
 
 	@media(min-width: @screen-desktop) {
 
+		// Restore default display for desktop if needed (usually inline-block or flex from base theme)
+		// However, specific display is often set by the base theme's desktop styles.
+		// For now, just ensure items are not display:block from our mobile rule.
+		// If they are inline-block or li by default, this is fine.
+		// If the base theme sets display: flex on ul, li will behave as flex items.
+		> li {
+			display: inline-block; // Or whatever the base theme uses for desktop layout
+			margin-bottom: 0; // Reset mobile margin
+			margin-left: 5px; // Create space for separator
+			padding-left: 10px; // Create space for separator
+			position: relative;
+
+			&:not(:first-child)::before {
+				content: "|";
+				position: absolute;
+				left: -2px; // Adjust position of separator
+				top: 50%;
+				transform: translateY(-50%); // Vertically center separator
+				color: darken(@light-slate-gray, 30%); // Color for separator
+			}
+			// Remove separator space for the first child if margin/padding applied to all
+			&:first-child {
+				margin-left: 0;
+				padding-left: 0;
+			}
+		}
+
 		a {
 			color: @text-light;
 
@@ -100,10 +276,13 @@
 
 			a {
 				color: @text-bg-base;
+				padding: @half @double; // Add some padding to submenu links
 
 				&:hover,
 				&:focus {
 					border-color: transparent;
+					background-color: lighten(@bg-base, 10%); // Added hover effect
+					color: @text-bg-base; // Ensure text color remains contrasty
 				}
 			}
 		}
@@ -129,7 +308,7 @@
 			&:hover,
 			&:focus {
 				color: @primary;
-				border-color: @bg-base;
+				border-color: @primary; // Changed to @primary
 			}
 		}
 	}
@@ -147,26 +326,38 @@
 @media(min-width: @screen-desktop) {
 
 	.pkp_navigation_user_wrapper {
-		top: 13px;
+		position: fixed; // Made sticky
+		top: 0;
 		right: 0;
-		left: auto;
-		width: 25%;
+		left: auto; // Keep alignment to the right
+		width: auto; // Adjust width to content
 		transform: none;
-		padding-right: @triple;
+		padding: @half; // Added padding for the bar
+		padding-right: @double; // Keep right padding for content within
+		background: @bg-base; // Added background
+		z-index: 1000; // Ensure it's on top
 
 		a {
-			color: @text-light;
+			color: @text-bg-base; // Ensure text is visible on @bg-base
 		}
 
 		ul a:hover,
 		ul a:focus {
-			border-color: @bg-base;
+			border-color: @accent; // Use accent for hover
 		}
 
 		.pkp_navigation_user {
 			margin-right: 0;
 			padding-right: 0;
 			width: auto;
+			display: flex; // Align items in a row
+
+			> li {
+				margin-left: @base; // Add some spacing between items
+				&:first-child {
+					margin-left: 0;
+				}
+			}
 		}
 	}
 

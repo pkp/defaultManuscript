@@ -29,7 +29,7 @@ class DefaultManuscriptChildThemePlugin extends ThemePlugin {
 		$this->setParent('defaultthemeplugin');
 
 		// Add custom styles
-		$this->modifyStyle('stylesheet', array('addLess' => array('styles/index.less')));
+		$this->addStyle('defaultManuscriptChildStylesheet', 'styles/index.less', ['contexts' => 'frontend']);
 
 		// Remove the typography options of the parent theme.
 		$this->removeOption('typography');

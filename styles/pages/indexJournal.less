@@ -72,6 +72,15 @@
 
 		.sections {
 			margin-top: @double;
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+			gap: @double;
+
+			// Reset margin for article summaries if grid gap handles spacing
+			// Assuming .obj_article_summary are direct children or within a wrapper that's a direct child
+			.obj_article_summary {
+				margin-bottom: 0; // Grid gap will handle spacing
+			}
 		}
 
 		.read_more {

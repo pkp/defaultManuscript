@@ -12,26 +12,56 @@
 // A grey background on large screens
 html,
 body {
-	background: @bg-shade;
+	background: @light-slate-gray; // Updated to use the new complementary color directly
+	line-height: 1.6;
+}
+
+p {
+	margin-bottom: 1em;
 }
 
 // A white background for the boxed content area
 .pkp_structure_page {
 	margin: 0 auto;
 	max-width: @screen-lg-desktop-container;
-	background: @bg;
+	background: @bg; // Should still be #fff, contrast is good with light-slate-gray
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 	@media(min-width: @screen-lg-desktop) {
 		margin-top: @triple;
 		margin-bottom: @triple;
+		padding-top: 5em; // Adjusted for both fixed user nav and sticky primary nav
+	}
+}
+
+@media (max-width: @screen-md-max) { // Assuming @screen-md-max is < @screen-desktop (e.g., <= 991px)
+	.pkp_structure_page {
+		// Adjust page padding for mobile if fixed headers are handled differently
+		// For now, assume fixed headers might not be used or are simpler on mobile
+		padding-top: @base; // Reduce top padding if sticky headers are desktop-only
+	}
+
+	.pkp_structure_main,
+	.pkp_structure_sidebar {
+		float: none;
+		width: 100% !important; // Important to override potential inline styles or more specific rules
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.pkp_structure_sidebar {
+		padding: @base; // Add some padding for stacked sidebar
+
+		&:before {
+			display: none; // Hide the desktop sidebar border/background pseudo-element
+		}
 	}
 }
 
 .pkp_structure_footer_wrapper {
-	background: @bg-light-shade;
+	background: @bg-light-shade; // Updated via variables.less
 	border-top: @bg-border;
-	border-bottom: @double solid @bg-base;
+	border-bottom: @double solid @primary; // Changed to new @primary for branding
 }
 
 // Removes the left and right borders around the main content panel
@@ -40,8 +70,12 @@ body {
 	display: none;
 }
 
+.pkp_structure_main {
+	padding: 1.5em; // Added padding
+}
+
 .pkp_structure_content {
-	padding-top: 0;
+	padding: 1.5em; // Changed from padding-top: 0; to general padding
 }
 
 .pkp_structure_sidebar {
@@ -55,7 +89,7 @@ body {
 			right: 0;
 			bottom: 0;
 			width: 300px;
-			border-left: @bg-border;
+			border-left: @bg-border-color; // Updated to use the new variable
 		}
 
 		// Child elements need position to appear above the background element
@@ -63,6 +97,27 @@ body {
 			position: relative;
 		}
 	}
+}
+
+// Font size adjustments for very small screens
+@media (max-width: @screen-xs-max) { // Assuming @screen-xs-max is defined (e.g., <= 480px)
+	html, body {
+		font-size: 95%; // Slightly reduce base font size
+	}
+
+	.page_title, // Article Title on article detail page
+	.h1 { // Global h1 class
+		font-size: 2em; // Reduce from 2.5em
+	}
+
+	h2, .h2 {
+		font-size: 1.75em; // Reduce from 2em
+	}
+
+	h3, .h3 {
+		font-size: 1.5em; // Reduce from 1.75em
+	}
+	// Other elements like .pkp_site_name .is_text could also be adjusted if needed
 }
 
 // Center the content panel when no sidebar is present

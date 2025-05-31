@@ -9,20 +9,41 @@
  * @link templates/frontend/objects/galley_link.tpl
  */
 .obj_galley_link {
-	&:extend(.cmp_manuscript_button all);
+	&:extend(.cmp_manuscript_button all); // Extends base button styles
+	background-color: @primary; // Prominent background using deep gold
+	color: @text-bg-base;      // Text color for contrast
+	padding: @half @base;       // Specific padding for galley links
+	border-radius: @radius;     // Rounded corners
+	margin-bottom: @half;       // Space below if they stack
+	margin-right: @half;        // Space to the side if they are inline-block (depends on parent)
+	text-align: center;         // Ensure text is centered
+	display: inline-block;      // Allow side-by-side placement with margin
+
+	&:hover,
+	&:focus {
+		background-color: darken(@primary, 10%); // Darken on hover/focus
+		color: @text-bg-base; // Ensure text color remains contrasted
+	}
 
 	&.restricted {
-		border-color: @bg-shade;
-		background: @bg-shade;
-		color: @text-light;
+		// Keep restricted style distinct, but ensure it's still button-like
+		background-color: @bg-shade; // Original background for restricted
+		border-color: @bg-border-color; // Use consistent border color
+		color: @text-light; // Original text color
+		padding: @half @base; // Consistent padding
+		border-radius: @radius; // Consistent radius
 
-		&:before {
-			color: @text-light;
+		&:before { // Assuming this is for an icon (e.g., lock)
+			color: @text-light; // Keep icon color
 		}
 
 		&:hover,
 		&:focus {
-			background: @text-light;
+			background-color: darken(@bg-shade, 5%); // Slightly darken restricted button on hover
+			color: @text-light;
 		}
 	}
+
+	// If there are specific PDF/HTML types, they can be further customized
+	// e.g., .pdf_galley_link, .html_galley_link
 }
