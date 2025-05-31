@@ -10,17 +10,42 @@
  */
 
 .pkp_block {
+	border: 1px solid @bg-border-color;
+	padding: @base;
+	margin-bottom: @double;
+	border-radius: @radius;
 
 	.title {
-		display: inline-block;
-		padding-bottom: 0.5em;
-		border-bottom: 3px solid @accent;
-		font-weight: @bold;
-		text-transform: uppercase;
+		display: inline-block; // Keeps it from taking full width if text is short
+		padding-bottom: 0.5em; // Original padding
+		border-bottom: 3px solid @accent; // Original border
+		font-weight: @bold; // Original font-weight
+		text-transform: uppercase; // Original text-transform
+		margin-bottom: @base; // Add some space below the title before block content
+		// Remove margin-top from title if block has padding, or adjust title positioning
+		margin-top: 0; // Assuming padding on .pkp_block handles top spacing
 	}
 
+	// Adjustments for content within the block if using padding on .pkp_block
+	// For example, if lists or other elements inside have their own margins
+	> *:last-child {
+		margin-bottom: 0; // Remove bottom margin from last child inside block
+	}
 }
 
 .block_make_submission a {
-	&:extend(.cmp_manuscript_button all);
+	&:extend(.cmp_manuscript_button all); // Keep existing base, but override below
+	background-color: @primary; // Use the new primary color (deep gold)
+	color: @text-bg-base; // Ensure good contrast (should be fine as @primary is dark gold)
+	padding: @base @double;
+	text-align: center;
+	display: block; // Make it full-width within its container
+	border-radius: @radius; // Add rounded corners
+	// text-transform: uppercase; // Already from .cmp_manuscript_button
+	// font-weight: @bold; // Already from .cmp_manuscript_button
+
+	&:hover, &:focus {
+		background-color: darken(@primary, 10%);
+		color: @text-bg-base; // Ensure contrast on hover too
+	}
 }

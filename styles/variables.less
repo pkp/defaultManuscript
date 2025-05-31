@@ -15,21 +15,32 @@
 
 // Background
 @bg:                     #fff;
-@bg-shade:               #ddd;
-@bg-light-shade:         rgba(0,0,0,0.05);
-@bg-base:                #4b7d92; // Accent color used in the header
-@text-bg-base:           #fff;
+@bg-shade:               #f0f2f5; // New light slate gray
+@bg-light-shade:         rgba(0,0,0,0.03); // Lighter version of slate gray
+@bg-base:                #426c7f; // Darkened for better contrast with white text (was #4b7d92)
+@text-bg-base:           #fff; // Ensure good contrast with @bg-base
+
+// Text specific colors
+@text-light-accessible:  #6c6c6c; // For better contrast than default @text-light on white bg
+
+// Complementary colors
+@deep-gold:              #b58500;
+@light-slate-gray:       #f0f2f5;
 
 // Primary "anchor" color for links
-@primary:                #4b7d92;
+@primary:                @deep-gold; // New deep gold
 @primary-lift:           lighten(@primary, 10%);
 
 // Accent color
-@accent:                 #f7bc4a;
+@accent:                 #cda300; // Brighter version of deep gold
 
 // Border colors
-@bg-border-color:        @bg-shade;
+@bg-border-color:        #e0e2e5; // Slightly darker shade of new @bg-shade
 
 // Font
-@font:  "Noto Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
-@font-heading:  "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+@font:  "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+@font-heading:  "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+
+// Shadows
+@shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+@shadow-md: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);

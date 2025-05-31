@@ -10,54 +10,182 @@
  */
 .obj_article_details {
 
+	// Main Article Title
+	.page_title {
+		// Should inherit h1 styles from components.less (font-family, size, weight)
+		margin-bottom: @base;
+	}
+
 	.subtitle {
 		font-family: @font;
+		font-size: 1.2em; // Slightly larger subtitle
+		font-style: italic;
+		margin-bottom: @double;
+		color: @text-light-accessible; // Changed from @text-light
 	}
 
-	.authors,
-	.doi {
+	// Authors block at the top
+	// Assuming this .authors class is used for the primary author list at the top.
+	// If there's a different class or structure, this would need adjustment.
+	.authors {
 		font-family: @font-heading;
+		font-size: 1.1em; // Slightly larger than base text
+		margin-bottom: @base;
+		line-height: 1.6; // Ensure good line height for wrapped author lists
+
+		.author_name { // Class for individual author names
+			font-weight: @bold;
+		}
+
+		.affiliation { // Class for affiliations
+			font-size: 0.9em;
+			color: @text-light-accessible; // Changed from @text-light
+			margin-left: 0.5em;
+		}
+		// ORCID styling will be handled separately to avoid complexity here
 	}
 
-	.orcid a,
-	.doi a {
-		color: @text;
-		text-decoration: none;
+	// DOI block at the top
+	.doi {
+		font-family: @font-heading; // Keep font consistent
+		margin-bottom: @double;
 
-		&:hover,
-		&:focus {
-			color: @primary;
-			text-decoration: underline;
+		a {
+			color: @primary; // Ensure DOI link uses primary color
+			text-decoration: none;
+			word-break: break-all; // Prevent long DOIs from breaking layout
+
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+			}
 		}
 	}
 
-	.orcid a {
-		font-size: 10px;
-		color: @text-light;
+	// The original .orcid a and .doi a rules might be too general or conflict.
+	// .doi a is now handled above. .orcid a will be addressed next.
+	// The original .authors li rule is also deferred for clarity.
+
+	// ORCID icon styling within the main .authors list
+	.authors .orcid-icon { // Assuming <img class="orcid-icon"> or <span class="orcid-icon">
+		display: inline-block;
+		width: 1em; // Relative to parent (.authors) font-size
+		height: 1em; // Relative to parent (.authors) font-size
+		vertical-align: middle;
+		margin-left: 0.3em;
+		position: relative; // For fine-tuning
+		top: -0.1em; // Adjust as needed for specific icon
 	}
 
-	.authors li {
+	// Specific styling for the .authors li that is likely for author biographies
+	// to avoid conflict with any potential <li> usage in the top authors list.
+	.author_bios .authors_list > li { // Assuming a structure like .author_bios > ul.authors_list > li
 		margin-bottom: @double;
+		padding-left: 0; // Reset any list padding if needed
+		list-style-type: none; // Remove bullets if it's a list of bios
 	}
+	// Comment out or remove the old generic .orcid a and .authors li if they are now handled
+	// .orcid a { ... } // Handled by .authors .orcid-icon or direct link styling if applicable
+	// .authors li { ... } // Handled by .author_bios .authors_list > li
+
+	// Abstract styling
+	.abstract {
+		margin-bottom: @double;
+		// Assuming .label or a heading tag is used for "Abstract" title
+		// Text styling (font-size, line-height) inherited from body or .obj_article_details
+	}
+
+	// Keywords styling
+	.keywords {
+		margin-bottom: @double;
+
+		// Assuming .label or a heading tag is used for "Keywords" title
+		.value p, .value { // Assuming keywords are in a <p> or directly in .value
+			display: flex; // Use flexbox for keyword badges
+			flex-wrap: wrap; // Allow wrapping
+			gap: 0.5em; // Space between keyword badges
+		}
+
+		.keyword { // Class for individual keyword items
+			background-color: @bg-shade;
+			color: @text;
+			padding: 0.25em 0.75em; // Adjusted padding for better appearance
+			border-radius: @radius;
+			font-size: 0.9em; // Slightly smaller font for keywords
+			// display: inline-block; // Not needed with flex parent
+			// margin-right: 0.5em; // Handled by gap
+			// margin-bottom: 0.5em; // Handled by gap and flex-wrap
+		}
+	}
+
 
 	.main_entry {
 
-		.label {
-			display: inline-block;
-			padding: 0 0 @half;
+		.label { // General style for labels like Abstract, Issue, etc.
+			display: block; // Make label take full width
+			font-family: @font-heading;
+			font-size: 1.5em; // Make it like an H3/H4
+			font-weight: @bold;
+			padding-bottom: @half;
+			margin-bottom: @base;
 			border-bottom: 3px solid @accent;
-			color: @text-light;
+			color: @text-strong; // Use a stronger color for labels
 			text-transform: uppercase;
 		}
 
-		.doi .label,
-		.keywords .label {
-			display: inline;
-			padding: 0;
+		// Specific overrides for labels that should NOT look like big headings
+		&.doi .label, // If .doi is a .main_entry itself
+		&.keywords .label { // If .keywords is a .main_entry itself
+			// This might need adjustment based on HTML. If .label is *inside* .doi or .keywords div,
+			// then selectors like .doi > .label would be better.
+			// For now, assuming .doi and .keywords might also be .main_entry blocks.
+			display: inline; // Revert to inline for these specific labels if they are not titles
+			font-size: 1em; // Revert font size
+			font-weight: @normal;
 			border: none;
 			text-transform: none;
+			color: @text-light-accessible; // Changed from @text-light
+			margin-bottom: 0;
 		}
 	}
+
+	// Section headings within the main article content (e.g. Introduction, Methods)
+	// Assuming article content is in a div like .article_body_content
+	.article_body_content {
+		h2, h3, h4 { // Target h2, h3, h4 used as section titles
+			// Should inherit font-family, size, weight from global H_ styles in components.less
+			margin-top: @double;
+			margin-bottom: @base;
+		}
+	}
+
+	// References section styling
+	.references {
+		// Assuming "References" title is handled by .main_entry .label or a h_ tag
+		margin-top: @double; // Space above references section
+		margin-bottom: @double; // Space below references section
+
+		ul, ol {
+			padding-left: @double; // Standard indentation for lists
+			list-style-position: outside;
+		}
+
+		li, p { // Target list items or paragraphs if references are not in a list
+			margin-bottom: @half;
+			line-height: @line-height-base; // Ensure consistent line height (assuming @line-height-base is defined, e.g. 1.6)
+
+			a {
+				color: @primary; // Ensure links within references use primary color
+				text-decoration: none;
+				word-break: break-all; // Break long URLs/DOIs
+
+				&:hover, &:focus {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
 
 	.row,
 	.main_entry,
@@ -108,7 +236,7 @@
 			}
 
 			.label {
-				color: @text-light;
+				color: @text-light-accessible; // Changed from @text-light
 			}
 		}
 

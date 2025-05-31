@@ -9,9 +9,100 @@
  * @link templates/frontend/objects/article_summary.tpl
  */
 .obj_article_summary {
+	border: 1px solid @bg-border-color;
+	border-radius: @radius;
+	padding: @base;
+	margin-bottom: @double; // This might be overridden by grid gap if used
+	background-color: @bg;
+	box-shadow: @shadow-sm;
+	display: flex; // Use flexbox for layout within the card
+	flex-direction: column; // Stack items vertically
+	height: 100%; // Make card take full height if in a grid
 
-	.subtitle {
+	.cover_image { // Assuming a div wrapper for the image
+		margin-bottom: @base;
+		text-align: center; // Center image if it's narrower than card
+
+		img {
+			max-width: 100%;
+			height: auto;
+			border-radius: @radius; // Optional: round corners of image
+		}
+	}
+
+	.title {
+		// Should inherit h3/h4 styles from components.less
+		// Ensure it's a block element for proper spacing if it's a link
+		display: block;
+		margin-bottom: @half;
+
+		a {
+			text-decoration: none; // Remove underline from title link
+			color: @text-strong; // Use strong text color for title link
+
+			&:hover, &:focus {
+				color: @primary;
+				text-decoration: underline; // Underline on hover for title link
+			}
+		}
+	}
+
+	.subtitle { // Existing style from original file
 		font-family: @font;
 		font-size: @font-sml;
+		color: @text-light-accessible; // Changed from @text-light
+		margin-bottom: @half; // Added margin for subtitle
+	}
+
+	.authors {
+		font-size: 0.9em;
+		color: @text-light-accessible; // Changed from @text-light
+		margin-bottom: @base;
+		line-height: 1.4; // Slightly tighter line height for authors
+	}
+
+	.abstract { // Or .article_summary_abstract, .description etc.
+		font-size: 0.9em;
+		margin-bottom: @base;
+		line-height: 1.5;
+		flex-grow: 1; // Allow abstract to take available space, pushing "Read More" down
+	}
+
+	.read_more {
+		display: inline-block;
+		margin-top: auto; // Push to bottom if abstract doesn't fill space
+		padding-top: @half; // Ensure space above if abstract is short
+		color: @primary;
+		font-weight: @bold;
+		text-decoration: none;
+
+		&:hover, &:focus {
+			text-decoration: underline;
+			color: darken(@primary, 10%);
+		}
+	}
+
+	.article_type_badge { // Placeholder for article type (e.g., Review, Research)
+		font-size: 0.8em;
+		background-color: @accent;
+		color: #333333; // Changed from @text-bg-base for better contrast on @accent
+		padding: 0.2em 0.5em;
+		border-radius: @radius;
+		display: inline-block;
+		margin-bottom: @base; // Space below badge, before title or other content
+		// Could also be absolutely positioned at a corner of the card
+	}
+
+	// Ensure that if the card is a link itself, it behaves correctly
+	// This is common if the entire card is clickable
+	a.obj_article_summary_link_wrapper {
+		text-decoration: none;
+		color: inherit; // Inherit text color for contents
+
+		&:hover, &:focus {
+			// Optional: add hover effect to the card itself
+			// box-shadow: @shadow-md;
+			// border-color: darken(@bg-border-color, 10%);
+		}
 	}
 }
