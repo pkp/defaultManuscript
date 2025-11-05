@@ -61,21 +61,32 @@ class DefaultManuscriptChildThemePlugin extends ThemePlugin {
 		$additionalLessVariables = array();
 
 		// Update colour based on theme option from parent theme
-		if ($this->getOption('baseColour') !== '#1E6292') {
-			$additionalLessVariables[] = '@bg-base:' . $this->getOption('baseColour') . ';';
-			if (!$this->isColourDark($this->getOption('baseColour'))) {
+		if (($baseColour = $this->getOption('baseColour')) !== '#1E6292') {
+			if (!preg_match('/^#[0-9a-fA-F]{1,6}$/', $baseColour)) $baseColour = '#1E6292'; // pkp/pkp-lib#11974
+			$additionalLessVariables[] = '@bg-base:' . $baseColour . ';';
+			if (!$this->isColourDark($baseColour)) {
 				$additionalLessVariables[] = '@text-bg-base:rgba(0,0,0,0.84);';
 			}
 		}
 
 		// Update accent colour based on theme option
-		if ($this->getOption('accentColour') !== '#F7BC4A') {
-			$additionalLessVariables[] = '@accent:' . $this->getOption('accentColour') . ';';
+		if (($accentColour = $this->getOption('accentColour')) !== '#F7BC4A') {
+			if (!preg_match('/^#[0-9a-fA-F]{1,6}$/', $accentColour)) $accentColour = '#F7BC4A'; // pkp/pkp-lib#11974
+			$additionalLessVariables[] = '@accent:' . $accentColour . ';';
 		}
 
-		if ($this->getOption('baseColour') && $this->getOption('accentColour')) {
+		if ($baseColour && $accentColour) {
 			$this->modifyStyle('stylesheet', array('addLessVariables' => join('', $additionalLessVariables)));
 		}
+	}
+
+	/** @see ThemePlugin::saveOption */
+	public function saveOption($name, $value, $contextId = null) {
+		// Validate the base colour setting value.
+		if ($name == 'baseColour' && !preg_match('/^#[0-9a-fA-F]{1,6}$/', $value)) $value = null; // pkp/pkp-lib#11974
+		if ($name == 'accentColour' && !preg_match('/^#[0-9a-fA-F]{1,6}$/', $value)) $value = null; // pkp/pkp-lib#11974
+
+		parent::saveOption($name, $value, $contextId);
 	}
 
 	/**
