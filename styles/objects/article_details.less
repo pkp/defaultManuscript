@@ -57,6 +57,19 @@
 			border: none;
 			text-transform: none;
 		}
+
+		.item.abstract {
+			display: flex;
+			flex-direction: column;
+
+			.label {
+				align-self: flex-start;
+			}
+
+			> :not(.label) {
+				margin-top: 0;
+			}
+		}
 	}
 
 	.row,
