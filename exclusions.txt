@@ -2,3 +2,4 @@ defaultManuscript/.gitignore
 defaultManuscript/.github
 defaultManuscript/cypress
 defaultManuscript/exclusions.txt
+defaultManuscript/screenshot.jpg
