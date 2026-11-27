@@ -59,11 +59,8 @@
 		}
 
 		.item.abstract {
-			display: flex;
-			flex-direction: column;
-
 			.label {
-				align-self: flex-start;
+				display: table;
 			}
 
 			> :not(.label) {
@@ -168,10 +165,12 @@
 		}
 
 		.galleys_links {
+			display: block;
 
 			> li {
 				display: block;
 				margin-bottom: 0.5em;
+				margin-inline-end: 0;
 
 				&:last-child {
 					margin-bottom: 0;
