@@ -31,5 +31,9 @@
 @bg-border-color:        @bg-shade;
 
 // Font
-@font:  "Noto Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
-@font-heading:  "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+// DefaultManuscriptChildThemePlugin sets @font and @font-heading to these
+// again, after any font variables added by the parent theme's options
+@manuscript-font:  "Noto Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+@manuscript-font-heading:  "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+@font:  @manuscript-font;
+@font-heading:  @manuscript-font-heading;

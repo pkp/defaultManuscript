@@ -38,29 +38,22 @@ class DefaultManuscriptChildThemePlugin extends ThemePlugin {
 		// Add the option for an accent color
 		$this->addOption('accentColour', 'FieldColor', [
 			'label' => __('plugins.themes.defaultManuscript.option.accentColour.label'),
-			'description' => __('plugins.themes.default.option.colour.description'),
+			'description' => __('plugins.themes.defaultManuscript.option.accentColour.description'),
 			'default' => '#F7BC4A',
 		]);
 
-		// Dequeue any fonts loaded by parent theme
-		if (method_exists($this, 'removeStyle')) {
-			$this->removeStyle('font');
-			$this->removeStyle('font');
-			$this->removeStyle('font');
-			$this->removeStyle('font');
-			$this->removeStyle('font');
-			$this->removeStyle('font');
-			$this->removeStyle('font');
-			$this->removeStyle('font');
-			$this->removeStyle('font');
-			$this->removeStyle('font');
-			$this->removeStyle('font');
-		}
+		// Dequeue the font and homepage header image loaded by the parent theme,
+		// whose options are removed above
+		$this->removeStyle('font');
+		$this->removeStyle('homepageImage');
 
-		// Start with a fresh array of additionalLessVariables so that we can
-		// ignore those added by the parent theme. This gets rid of @font
-		// variable overrides from the typography option
-		$additionalLessVariables = array();
+		// Restore this theme's fonts. The parent theme's typography option may
+		// have added @font variables, which are compiled after this theme's
+		// LESS files, so this theme's fonts must be set again after them.
+		$additionalLessVariables = array(
+			'@font:@manuscript-font;',
+			'@font-heading:@manuscript-font-heading;',
+		);
 
 		// Update colour based on theme option from parent theme
 		if (($baseColour = $this->getOption('baseColour')) !== '#1E6292') {
