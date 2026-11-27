@@ -23,6 +23,29 @@
 	}
 }
 
+// Form buttons, which use the parent theme's bordered and shaded button
+.cmp_form .buttons button,
+.page_lost_password .buttons button,
+.page_search .submit button {
+	&:extend(.cmp_manuscript_button all);
+	line-height: @triple;
+	box-shadow: none;
+
+	&:hover,
+	&:focus {
+		box-shadow: none;
+	}
+
+	// The search button's icon
+	&:after,
+	&:hover:after,
+	&:focus:after {
+		top: 0;
+		background: transparent;
+		box-shadow: none;
+	}
+}
+
 // Breadcrumb navigation
 .cmp_breadcrumbs {
 	padding: @triple 0;
