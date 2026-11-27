@@ -22,3 +22,6 @@ msgstr "Montserrat/Noto Serif"
 
 msgid "plugins.themes.defaultManuscript.option.accentColour.label"
 msgstr "Accent Colour"
+
+msgid "plugins.themes.defaultManuscript.option.accentColour.description"
+msgstr "Choose a colour for heading underlines, icons and button highlights."
