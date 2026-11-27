@@ -191,6 +191,24 @@
 			box-shadow: none;
 		}
 
+		// Workaround: core prints the content of these boxes without the
+		// .value wrapper that article_details.tpl documents for each item, so
+		// pad the box itself. Remove this once core wraps their content in
+		// .value. The .value reset keeps the padding from doubling if it does.
+		.item.dataAvailability,
+		.item.fundingStatement,
+		.item.copyright {
+			padding: 0 @double @double;
+
+			> .label {
+				margin: 0 -@double @double;
+			}
+
+			> .value {
+				padding: 0;
+			}
+		}
+
 		@media(min-width: @screen-tablet) {
 			width: 240px;
 			margin-left: 30px;
