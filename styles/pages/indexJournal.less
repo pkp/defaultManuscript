@@ -54,16 +54,31 @@
 		}
 	}
 
-	.current_issue {
+	.pkp_structure_content .highlights {
+		background: @bg-light-shade;
 
-		h2 {
-			display: inline-block;
-			padding-bottom: 0.5em;
-			border-bottom: 3px solid @accent;
-			text-transform: uppercase;
-			font-weight: @bold;
-			color: @text-light;
+		// Keep the highlights below the primary navigation bar, which the
+		// parent theme's negative top margin would otherwise pull them over
+		@media(min-width: @screen-desktop) {
+			margin-top: 0;
 		}
+	}
+
+	.swiper-slide-button {
+		&:extend(.cmp_manuscript_button all);
+	}
+
+	.homepage_about > h2,
+	.current_issue > h2 {
+		display: inline-block;
+		padding-bottom: 0.5em;
+		border-bottom: 3px solid @accent;
+		text-transform: uppercase;
+		font-weight: @bold;
+		color: @text-light;
+	}
+
+	.current_issue {
 
 		.current_issue_title {
 			font-family: @font-heading;
